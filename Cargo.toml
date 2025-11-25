@@ -19,3 +19,5 @@ publish = false
 [dependencies]
 clap = { version = "4.5.53", features = ["derive"] }
 image = "0.25.9"
+kmeans_colors = "0.7.1"
+palette = "0.7.6"
