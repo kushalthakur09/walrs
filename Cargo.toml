@@ -1,6 +1,6 @@
 [package]
 name = "walrs"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 description = "A fast, minimal pywal-like theme generator written in Rust."
 license = "UNILICENSE"
