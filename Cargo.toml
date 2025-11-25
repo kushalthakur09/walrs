@@ -2,7 +2,7 @@
 name = "walrs"
 version = "0.1.0"
 edition = "2024"
-description = "walrs is a blazing fast, pywal-like tool for generating a color palette from user's wallpaper"
+description = "A fast, minimal pywal-like theme generator written in Rust."
 license = "UNILICENSE"
 repository = "https://github.com/itismeherb/walrs"
 homepage = "https://github.com/itismeherb/walrs"
@@ -18,3 +18,4 @@ publish = false
 
 [dependencies]
 clap = { version = "4.5.53", features = ["derive"] }
+image = "0.25.9"
