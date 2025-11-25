@@ -1,0 +1,20 @@
+[package]
+name = "walrs"
+version = "0.0.0"
+edition = "2024"
+description = "walrs is a blazing fast, pywal-like tool for generating a color palette from user's wallpaper"
+license = "UNILICENSE"
+repository = "https://github.com/itismeherb/walrs"
+homepage = "https://github.com/itismeherb/walrs"
+documentation = "https://github.com/itismeherb/walrs"
+
+[package.metadata.release]
+sign-commit = false
+push = true
+tag-name = "v{{version}}"
+tag-message = "Release {{version}}"
+allow-branch = ["master"]
+publish = false
+
+[dependencies]
+clap = { version = "4.5.53", features = ["derive"] }
