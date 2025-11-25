@@ -24,6 +24,29 @@ fn extract_pixels(img: &image::DynamicImage) -> Vec<(u8, u8, u8)> {
         .collect()
 }
 
+fn average_color(pixels: &[(u8, u8, u8)]) -> (u8, u8, u8) {
+    let mut r_sum: u64 = 0;
+    let mut g_sum: u64 = 0;
+    let mut b_sum: u64 = 0;
+
+    let count = pixels.len() as u64;
+    if count == 0 {
+        return (0, 0, 0);
+    }
+
+    for &(r, g, b) in pixels {
+        r_sum += r as u64;
+        g_sum += g as u64;
+        b_sum += b as u64;
+    }
+
+    (
+        (r_sum / count) as u8,
+        (g_sum / count) as u8,
+        (b_sum / count) as u8,
+    )
+}
+
 fn main() {
     let args = Args::parse();
 
@@ -34,6 +57,9 @@ fn main() {
             let resized = img.thumbnail(300, 300);
             let pixels = extract_pixels(&resized);
             println!("Number of visible pixels: {}", pixels.len());
+
+            let avg = average_color(&pixels);
+            println!("Average color: #{:02X}{:02X}{:02X}", avg.0, avg.1, avg.2);
         }
         Err(e) => {
             eprintln!("Failed to load image: {e}");
